@@ -599,7 +599,10 @@ function setupModeSelectors() {
     return;
   }
 
-  const updateChemistryMode = (exam, { animate = false } = {}) => {
+    const updateChemistryMode = (exam, { animate = false } = {}) => {
+    // Store the intended value immediately: a following subject switch must use it
+    // even when the visual transition for this exam is still running.
+    activeExam = exam;
     const apply = () => {
       activeExam = exam;
       const examKey = exam === "ОГЭ" ? "oge" : "ege";
@@ -639,9 +642,11 @@ function setupModeSelectors() {
     });
   };
 
-  const navigateToSubject = (url) => {
+  const navigateToSubject = (subject) => {
     window.clearTimeout(subjectNavigationTimer);
     subjectNavigationTimer = window.setTimeout(() => {
+      const examKey = activeExam === "ОГЭ" ? "oge" : "ege";
+      const url = `index.html?subject=${subject}&exam=${examKey}`;
       if (window.navigateWithTransition) window.navigateWithTransition(url);
       else window.location.href = url;
     }, 140);
@@ -687,8 +692,7 @@ function setupModeSelectors() {
           updateChemistryMode(selected, { animate: true });
         } else {
           if (selected === "РУССКИЙ") {
-            const examKey = activeExam === "ОГЭ" ? "oge" : "ege";
-            navigateToSubject(`index.html?subject=russian&exam=${examKey}`);
+            navigateToSubject("russian");
             closeAll();
             return;
           }
@@ -731,7 +735,9 @@ function setupModeSelectors() {
   });
 
   modeMenu?.querySelectorAll("[data-mode]").forEach((option) => {
-    option.addEventListener("click", () => selectHeaderMode(option.dataset.mode));
+    option.addEventListener("click", () => {
+      selectHeaderMode(option.dataset.mode);
+    });
   });
 }
 
@@ -1186,7 +1192,9 @@ function setupRussianModeSelect() {
   });
 
   modeMenu?.querySelectorAll("[data-mode]").forEach((option) => {
-    option.addEventListener("click", () => selectHeaderMode(option.dataset.mode));
+    option.addEventListener("click", () => {
+      selectHeaderMode(option.dataset.mode);
+    });
   });
 
   document.addEventListener("click", closeHeaderMode);
@@ -1204,9 +1212,11 @@ const closeSelects = () => selectors.forEach((selector) => {
   selector.querySelector(".hero-select__trigger")?.setAttribute("aria-expanded", "false");
 });
 let subjectNavigationTimer = 0;
-const navigateToSubject = (url) => {
+const navigateToSubject = (subject) => {
   window.clearTimeout(subjectNavigationTimer);
   subjectNavigationTimer = window.setTimeout(() => {
+    const examKey = russianMode.getActiveExam() === "ОГЭ" ? "oge" : "ege";
+    const url = `index.html?subject=${subject}&exam=${examKey}`;
     if (window.navigateWithTransition) window.navigateWithTransition(url);
     else window.location.href = url;
   }, 140);
@@ -1237,11 +1247,11 @@ selectors.forEach((selector) => {
   });
   options.forEach((option) => option.addEventListener("click", () => {
     const value = option.dataset.value;
+    if (type === "exam") window.clearTimeout(subjectNavigationTimer);
     if (type === "subject") window.clearTimeout(subjectNavigationTimer);
     applyChoice(value, { animate: true });
     if (selector.dataset.select === "subject" && value === "ХИМИЯ") {
-      const exam = russianMode.getActiveExam() === "ОГЭ" ? "oge" : "ege";
-      navigateToSubject(`index.html?subject=chemistry&exam=${exam}`);
+      navigateToSubject("chemistry");
       closeSelects();
       return;
     }
@@ -1406,7 +1416,9 @@ setupRussianSideNav();
     const update = () => {
       mount(subject, exam, true);
     };
-    if (subject === currentSubject || motionReduced) {
+    // If a transition is already underway, queue this selection too. Mounting the
+    // current subject immediately here used to let an older callback win the race.
+    if ((subject === currentSubject && !modeTransitionRunning) || motionReduced) {
       update();
       return;
     }
