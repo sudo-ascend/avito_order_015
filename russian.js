@@ -380,7 +380,13 @@ selectors.forEach((selector) => {
   trigger?.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
-    const next = type === "exam" ? (selector.dataset.active === "ЕГЭ" ? "ОГЭ" : "ЕГЭ") : (selector.dataset.active === "РУССКИЙ" ? "ХИМИЯ" : "РУССКИЙ");
+    const previous = selector.dataset.active;
+    const next = type === "exam" ? (previous === "ЕГЭ" ? "ОГЭ" : "ЕГЭ") : (previous === "РУССКИЙ" ? "ХИМИЯ" : "РУССКИЙ");
+    console.info("[Mode switch]", {
+      type: type === "exam" ? "exam" : "subject",
+      previous,
+      selected: next,
+    });
     options.find((option) => option.dataset.value === next)?.click();
   });
   options.forEach((option) => option.addEventListener("click", () => {

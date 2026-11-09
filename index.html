@@ -1315,6 +1315,11 @@ function setupModeSelectors() {
       event.stopPropagation();
       const selected = selector.dataset.active;
       const next = type === "exam" ? (selected === "ЕГЭ" ? "ОГЭ" : "ЕГЭ") : (selected === "ХИМИЯ" ? "РУССКИЙ" : "ХИМИЯ");
+      console.info("[Mode switch]", {
+        type: type === "exam" ? "exam" : "subject",
+        previous: selected,
+        selected: next,
+      });
       const option = options.find((button) => button.dataset.value === next);
       option?.click();
     });
