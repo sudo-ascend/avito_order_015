@@ -208,6 +208,12 @@ document.addEventListener('DOMContentLoaded',t_setvisRecs);}})();</script></head
     .course-app > .mobile-menu-backdrop{z-index:60}
     .course-app > .mobile-menu{z-index:61}
     .course-app > .side-nav{z-index:8}
+    /* Keep the first-load guide dimming, but lift the exam/subject sliders above it. */
+    :is(body.exam-guide-active,body.exam-guide-closing) .course-app > main{z-index:auto}
+    :is(body.exam-guide-active,body.exam-guide-closing) .course-app > main > #hero{isolation:auto}
+    :is(body.exam-guide-active,body.exam-guide-closing) .course-app .hero-heading-guide{position:relative;z-index:100}
+    :is(body.exam-guide-active,body.exam-guide-closing) .course-app .hero-choice-panel{position:relative;z-index:101;background:#fff;border-radius:14px;box-shadow:0 0 0 8px #fff,0 0 30px rgba(255,255,255,.95)}
+    :is(body.exam-guide-active,body.exam-guide-closing) .course-app .hero-choice-panel .choice-switch__track{box-shadow:0 0 0 3px #fff,0 0 16px rgba(255,255,255,.95)}
     @media(max-width:800px){.course-app::before{background-size:100% 650px,100% 760px,100% 560px}}
     .course-app.chemistry-page{--blue:#071675;--pink:#e500a4;--line:#f2a1d6;--glow-rgb:229,0,164}
     .course-app.russian-page{--blue:#151515;--pink:#d71920;--line:#f0b6b6;--glow-rgb:215,25,32}
