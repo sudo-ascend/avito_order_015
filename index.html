@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>html[hidden]{display:block!important}</style>
+  <script>
+    try {
+      if (window.sessionStorage.getItem("subject-transition") === "1") {
+        document.documentElement.classList.add("skip-site-loader");
+      }
+    } catch {}
+  </script>
+  <script>
+    const initialParams = new URLSearchParams(window.location.search);
+    if (!initialParams.has("subject")) {
+      initialParams.set("subject", "chemistry");
+      initialParams.set("exam", initialParams.get("exam") === "oge" ? "oge" : "ege");
+      window.history.replaceState(null, "", `${window.location.pathname}?${initialParams}`);
+    }
+    window.__initialMode = {
+      subject: "chemistry",
+      exam: initialParams.get("exam") === "oge" ? "oge" : "ege",
+    };
+    document.documentElement.hidden = false;
+    document.documentElement.removeAttribute("hidden");
+  </script>
+  <title>MendeleevSchool | Подготовка к ЕГЭ и ОГЭ</title>
+  <meta name="description" content="Онлайн-подготовка к ЕГЭ и ОГЭ по химии с Александром Менделеевым: занятия с нуля, авторские материалы, домашние задания, записи уроков и бесплатная консультация.">
+  <meta name="keywords" content="подготовка к ЕГЭ по химии, подготовка к ОГЭ по химии, репетитор по химии онлайн, химия ЕГЭ 2027, химия ОГЭ 2027, Александр Менделеев">
+  <meta name="author" content="Александр Менделеев">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <meta name="theme-color" content="#ff4fa6">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+  <meta property="og:locale" content="ru_RU">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Подготовка к ЕГЭ и ОГЭ по химии | Алекс Менделеев">
+  <meta property="og:title" content="Подготовка к ЕГЭ и ОГЭ по химии 2027 | Алекс Менделеев">
+  <meta property="og:description" content="Онлайн-подготовка к ЕГЭ и ОГЭ по химии с нуля, авторские материалы, домашние задания, записи уроков и бесплатная консультация.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-hero-vials.webp">
+  <meta property="og:image:alt" content="Александр Менделеев, преподаватель по химии">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Подготовка к ЕГЭ и ОГЭ по химии 2027 | Алекс Менделеев">
+  <meta name="twitter:description" content="Онлайн-подготовка к ЕГЭ и ОГЭ по химии с нуля и до высоких результатов.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-hero-vials.webp">
+  <meta name="application-name" content="Подготовка к ЕГЭ и ОГЭ по химии">
+  <meta name="apple-mobile-web-app-title" content="Химия ЕГЭ/ОГЭ">
+  <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/favicon.ico">
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/site-favicon.webp">
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//fonts.gstatic.com">
+  <link rel="dns-prefetch" href="//raw.githubusercontent.com">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sudo-ascend/avito_order_008@master/styles.css">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "#website",
+          "name": "Подготовка к ЕГЭ и ОГЭ по химии 2027 | Алекс Менделеев",
+          "description": "Онлайн-подготовка к ЕГЭ и ОГЭ по химии с Александром Менделеевым: занятия с нуля, авторские материалы, домашние задания, записи уроков и бесплатная консультация.",
+          "inLanguage": "ru-RU"
+        },
+        {
+          "@type": "Person",
+          "@id": "#teacher",
+          "name": "Александр Менделеев",
+          "jobTitle": "Преподаватель химии",
+          "description": "Преподаватель химии и наставник по подготовке к ЕГЭ и ОГЭ по химии.",
+          "image": "https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-teacher-alexander-about.webp",
+          "email": "mailto:cationschool@gmail.com",
+          "telephone": "+79804905872",
+          "sameAs": [
+            "https://t.me/alexcation",
+            "https://max.ru/"
+          ],
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "РГУ нефти и газа им. Губкина"
+          }
+        },
+        {
+          "@type": "EducationalOrganization",
+          "@id": "#school",
+          "name": "Подготовка к ЕГЭ и ОГЭ по химии | Алекс Менделеев",
+          "description": "Онлайн-подготовка к ЕГЭ и ОГЭ по химии: уроки, записи, домашние задания и поддержка преподавателя.",
+          "founder": {
+            "@id": "#teacher"
+          },
+          "logo": "https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-logo.webp",
+          "image": "https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-hero-vials.webp",
+          "email": "mailto:cationschool@gmail.com",
+          "telephone": "+79804905872",
+          "areaServed": "RU",
+          "sameAs": [
+            "https://t.me/alexcation",
+            "https://max.ru/"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "telephone": "+79804905872",
+            "email": "cationschool@gmail.com",
+            "availableLanguage": [
+              "ru"
+            ]
+          }
+        },
+        {
+          "@type": "Course",
+          "@id": "#course",
+          "name": "Подготовка к ЕГЭ и ОГЭ по химии 2027",
+          "description": "Онлайн-курс по химии для подготовки к ЕГЭ и ОГЭ с нуля и до высоких результатов.",
+          "provider": {
+            "@id": "#school"
+          },
+          "inLanguage": "ru-RU",
+          "educationalLevel": "8-11 классы",
+          "teaches": [
+            "ЕГЭ по химии",
+            "ОГЭ по химии",
+            "общая химия",
+            "решение экзаменационных задач"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Я ничего не знаю по химии, подойдёт ли курс для занятий с 0?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Да, курс начинается с базы и подойдёт для подготовки с нуля."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Не знаю, смогу ли присутствовать на всех занятиях онлайн. Что делать?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Все занятия сохраняются в записи."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Обязательно ли делать домашние задания?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Да, домашние задания помогают закреплять материал."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Где проходит курс?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Курс проходит в онлайн-формате."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+</head>
+<body class="chemistry-page">
+  <div class="site-loader" aria-hidden="true">
+    <div class="site-loader__halo"></div>
+    <img class="site-loader__logo" src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-logo.webp" alt="">
+  </div>
+  <div class="exam-guide-overlay" aria-hidden="true" hidden></div>
+  <header class="header">
+    <div class="shell header-inner">
+      <a class="logo" href="#hero" aria-label="Алекс Менделеев">
+        <img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-logo.webp" alt="Алекс Менделеев">
+      </a>
+      <a class="contacts" href="tel:+79804905872">
+        <b>+7 980 490 58 72</b>
+        <small>cationschool@gmail.com</small>
+      </a>
+      <a class="outline-link" href="#process">Как проходят уроки? →</a>
+      <div class="header-line"></div>
+      <div class="exam-display" data-mode-control>
+        <button class="exam-mode-trigger" type="button" aria-label="Выберите предмет и экзамен" aria-expanded="false" aria-controls="chemistry-mode-options">
+          <span data-mode-exam>ЕГЭ</span><span data-mode-subject>Химия</span><i class="exam-mode-chevron" aria-hidden="true"></i>
+        </button>
+        <div id="chemistry-mode-options" class="exam-mode-menu" role="listbox" hidden>
+          <button type="button" role="option" data-mode="ege-russian">ЕГЭ · Русский</button>
+          <button type="button" role="option" data-mode="oge-russian">ОГЭ · Русский</button>
+          <button type="button" role="option" data-mode="ege-chemistry">ЕГЭ · Химия</button>
+          <button type="button" role="option" data-mode="oge-chemistry">ОГЭ · Химия</button>
+        </div>
+      </div>
+      <div class="social-links">
+        <a class="telegram" href="https://t.me/alexcation" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/social-telegram.webp" alt="">
+        </a>
+        <a class="max" href="https://max.ru/" target="_blank" rel="noopener noreferrer" aria-label="MAX">
+          <img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/social-max.webp" alt="" aria-hidden="true">
+        </a>
+      </div>
+      <button class="hamburger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu-backdrop" hidden></div>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Мобильное меню" hidden>
+    <a href="#hero">Главная</a>
+    <a href="#format">Формат</a>
+    <a href="#about">Преподаватель</a>
+    <a href="#process">Цикл</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#exams">Записаться</a>
+    <a href="#faq">FAQ</a>
+    <a href="#footer">Контакты</a>
+    <div class="mobile-menu-socials">
+      <a class="telegram" href="https://t.me/alexcation" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+        <img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/social-telegram.webp" alt="">
+      </a>
+      <a class="max" href="https://max.ru/" target="_blank" rel="noopener noreferrer" aria-label="MAX">
+        <img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/social-max.webp" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+  <nav class="side-nav" aria-label="Разделы">
+    <a class="active" href="#hero"></a>
+    <a href="#about"></a>
+    <a href="#process"></a>
+    <a href="#reviews"></a>
+    <a href="#exams"></a>
+    <a href="#faq"></a>
+  </nav>
+
+  <main>
+    <section id="hero" class="hero shell rings-left">
+      <div class="hero-copy">
+        <div class="hero-heading-guide">
+          <div class="hero-choice-panel" aria-label="Выбор экзамена и предмета">
+            <div class="choice-switch hero-select" data-select="exam" data-active="ЕГЭ" role="group" aria-label="Экзамен">
+              <span class="choice-switch__caption">Экзамен</span>
+              <div class="choice-switch__controls">
+                <button class="choice-switch__option" type="button" data-value="ОГЭ" aria-pressed="false">ОГЭ</button>
+                <button class="hero-select__trigger choice-switch__track" type="button" data-toggle aria-label="Сменить экзамен">
+                  <span class="choice-switch__thumb" aria-hidden="true"></span>
+                </button>
+                <button class="choice-switch__option" type="button" data-value="ЕГЭ" aria-pressed="true">ЕГЭ</button>
+              </div>
+            </div>
+            <div class="choice-switch hero-select" data-select="subject" data-active="ХИМИЯ" role="group" aria-label="Предмет">
+              <span class="choice-switch__caption">Предмет</span>
+              <div class="choice-switch__controls">
+                <button class="choice-switch__option" type="button" data-value="ХИМИЯ" aria-pressed="true">Химия</button>
+                <button class="hero-select__trigger choice-switch__track" type="button" data-toggle aria-label="Сменить предмет">
+                  <span class="choice-switch__thumb" aria-hidden="true"></span>
+                </button>
+                <button class="choice-switch__option" type="button" data-value="РУССКИЙ" aria-pressed="false">Русский</button>
+              </div>
+            </div>
+          </div>
+        <div class="exam-guide-tooltip" role="status" hidden>
+          Выберите экзамен<br>и предмет
+        </div>
+        </div>
+        <h1>Подготовка к <span data-hero-exam>ЕГЭ</span><br>по химии 2027</h1>
+        <p>С полного нуля выстроим сильную<br>логическую базу по химии</p>
+        <a class="pink-btn" href="#exams">Смотреть цены</a>
+        <a class="hero-video" href="#process">
+          <img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-hero-flask.webp" alt="">
+          <span>Химия просто,<br>если учить правильно</span>
+        </a>
+      </div>
+      <div class="hero-person">
+        <div class="pink-disc"></div>
+        <div class="hero-portrait">
+          <img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-teacher-alexander-hero.webp" alt="Александр Менделеев">
+        </div>
+        <span class="metric m-one" data-exam-content="ОГЭ" hidden>средняя оценка<br>ОГЭ <b>4.84</b></span>
+        <span class="metric m-two" data-exam-content="ЕГЭ">средний балл<br>ЕГЭ <b>84.1</b></span>
+      </div>
+      <article class="hero-note">
+        <b>АЛЕКСАНДР МЕНДЕЛЕЕВ</b>
+        <ul>
+          <li data-exam-content="ЕГЭ">Личный результат ЕГЭ — 100 баллов</li>
+          <li>Высшее химическое образование</li>
+          <li>Более 700 учеников</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="format" class="shell benefit-grid">
+      <article class="benefit magenta">
+        <span class="benefit-icon"><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-benefit-online.webp" alt=""></span>
+        <h2>УРОКИ<br>ОНЛАЙН</h2>
+        <ul>
+          <li>2 занятия в неделю</li>
+          <li>Записи уроков в высоком качестве</li>
+          <li>Авторский конспект к каждому уроку</li>
+        </ul>
+      </article>
+      <article class="benefit navy">
+        <span class="benefit-icon"><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-benefit-homework.webp" alt=""></span>
+        <h2>ДОМАШНИЕ<br>ЗАДАНИЯ</h2>
+        <ul>
+          <li>Выдаются после каждого занятия</li>
+          <li>Оперативная проверка</li>
+          <li>Обязательны к выполнению</li>
+        </ul>
+      </article>
+      <article class="benefit navy">
+        <span class="benefit-icon"><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-benefit-chemistry.webp" alt=""></span>
+        <h2>НЕ ОНЛАЙН-<br>ШКОЛА!</h2>
+        <ul>
+          <li>Уроки веду лично я</li>
+          <li>Авторский курс</li>
+          <li>Ученики всегда могут связаться со мной</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="about" class="about shell">
+      <div class="about-photo">
+        <div>
+          <img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-teacher-alexander-about.webp" alt="Александр Менделеев">
+        </div>
+      </div>
+      <div class="about-copy">
+        <h2>Кто такой<br>Александр Менделеев</h2>
+        <ul>
+          <li>Окончил РГУ нефти и газа им. Губкина по профилю «Химическая технология»</li>
+          <li>Доп. образование «Офицер запаса службы горючего»</li>
+          <li data-exam-content="ЕГЭ">Дважды сдавал ЕГЭ по химии: 99 и 100 баллов</li>
+          <li>Преподавательский стаж более 6 лет</li>
+          <li>Более 700 учеников уже прошли подготовку со мной</li>
+          <li data-exam-content="ОГЭ" hidden>Средняя оценка учеников на ОГЭ 4.84</li>
+          <li data-exam-content="ЕГЭ">Средний балл учеников ЕГЭ 84.1</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Подготовка к ЕГЭ по химии">◦ ЕГЭ ПО ХИМИИ 2027 ◦ АЛЕКС МЕНДЕЛЕЕВ ◦ ЕГЭ ПО ХИМИИ 2027 ◦ АЛЕКС МЕНДЕЛЕЕВ</div>
+
+    <section id="process" class="process shell">
+      <h2>Цикл работы на уроке</h2>
+      <p class="caption">Наш процесс обучения химии прост, прозрачен и эффективен</p>
+      <div class="steps">
+        <article>
+          <div><i><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/process-workbook.webp" alt=""></i><b>01</b></div>
+          <h3>Выдача рабочей тетради</h3>
+          <p>Авторский материал<br>для системного запоминания</p>
+        </article>
+        <article>
+          <div><i><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/process-video.webp" alt=""></i><b>02</b></div>
+          <h3>Видео-занятие</h3>
+          <p>Короткий онлайн-урок<br>с понятным объяснением темы</p>
+        </article>
+        <article>
+          <div><i><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/process-homework.webp" alt=""></i><b>03</b></div>
+          <h3>Домашнее задание</h3>
+          <p>Практика для закрепления<br>материала сразу после урока</p>
+        </article>
+        <article>
+          <div><i><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-process-atom.webp" alt=""></i><b>04</b></div>
+          <h3>Разбор домашнего задания</h3>
+          <p>Подробный разбор ошибок<br>и повторение материала</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews shell rings-right">
+      <h2>Отзывы моих учеников</h2>
+      <p class="caption">Реальные отзывы учеников о качестве обучения и результатах</p>
+      <div class="review-title" data-exam-content="ЕГЭ">ЕГЭ</div>
+      <div class="review-grid" data-exam-content="ЕГЭ">
+        <article><header><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-review-artem.webp" alt="Артём"><b>Артем</b></header><p>У меня 93 балла. Все круто, занимался с нуля. Я подключился к занятиям не с сентября, поэтому думаю на все 100. Алекс реально машина: химия прекрасна просто, удачи вам с новыми учениками.</p></article>
+        <article><header><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-review-kirill.webp" alt="Кирилл"><b>Кирилл</b></header><p>Алекс, спасибо за подготовку. У меня 88. Занимался я подготовкой с 30–40 баллами и в целом не рассчитывал на высокий результат. Но тут прямо затянуло в химию.</p></article>
+        <article><header><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-review-liya.webp" alt="Лия"><b>Лия</b></header><p>Алекс, просто спасибо, у меня 97!!! Я пришла на занятия с нулём, но на уроках реально офигела, насколько это интересно и понятно. Я влюбилась в химию.</p></article>
+      </div>
+      <div class="review-title" data-exam-content="ОГЭ" hidden>ОГЭ</div>
+      <div class="review-grid" data-exam-content="ОГЭ" hidden>
+        <article><header><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-review-sofiya.webp" alt="София"><b>София</b></header><p>Александр, спасибо вам большое за подготовку и за знания, которые вы мне дали! Благодаря вам я полюбила химию, и этот предмет стал действительно интересным.</p></article>
+        <article><header><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-review-taisiya.webp" alt="Таисия"><b>Таисия</b></header><p>Александр, вы лучший! Спасибо за вашу помощь в подготовке к ОГЭ. С первого урока мне очень понравились занятия — всё подробно и через понимание.</p></article>
+        <article><header><img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-review-yana.webp" alt="Яна"><b>Яна</b></header><p>За 4 месяца с нуля до 38/38 на ОГЭ по химии. Александр объяснил понятно и без зубрёжки — я полюбила предмет и теперь хочу связать с ним будущее.</p></article>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="Подготовка к ЕГЭ по химии">◦ ЕГЭ ПО ХИМИИ 2027 ◦ АЛЕКС МЕНДЕЛЕЕВ ◦ ЕГЭ ПО ХИМИИ 2027 ◦ АЛЕКС МЕНДЕЛЕЕВ</div>
+
+    <section id="exams" class="pricing shell" aria-live="polite"></section>
+
+    <section id="faq" class="faq shell rings-left">
+      <h2>Популярные вопросы</h2>
+      <p class="caption">Часто задаваемые вопросы, которые могут возникать</p>
+      <div class="faq-grid">
+        <details><summary>Я ничего не знаю по химии, подойдёт ли курс для занятий с 0?</summary><p>Да, курс рассчитан и на подготовку с полного нуля.</p></details>
+        <details><summary>Не знаю, смогу ли присутствовать на всех занятиях онлайн. Что делать?</summary><p>У каждого урока будет запись.</p></details>
+        <details><summary>Обязательно ли делать домашние задания?</summary><p>Да, так знания закрепляются намного быстрее.</p></details>
+        <details><summary>Где проходит курс?</summary><p>Занятия проходят онлайн.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer">
+    <div class="shell footer-inner">
+      <div class="footer-rings" aria-hidden="true"></div>
+      <article class="consultation">
+        <div class="consultation-photo">
+          <img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/chemistry-teacher-alexander-consultation.webp" alt="Александр Менделеев">
+        </div>
+        <h2>Бесплатная<br>консультация</h2>
+        <p>Остались вопросы? Помогу<br>разобраться во всех деталях!</p>
+        <button class="pink-btn consultation-trigger" type="button">Оставить заявку →</button>
+      </article>
+      <div class="footer-contacts">
+        <h3>Контакты:</h3>
+        <a href="tel:+79804905872">+7 980 490 58 72</a>
+        <a href="mailto:cationschool@gmail.com">cationschool@gmail.com</a>
+        <h3 class="footer-menu-title">Меню:</h3>
+        <a href="#hero">Главная</a>
+        <a href="#about">Автор</a>
+        <a href="#process">Этапы</a>
+        <a href="#reviews">Отзывы</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="footer-social">
+        <h3>Напишите мне:</h3>
+        <div class="footer-socials">
+          <a class="telegram" href="https://t.me/alexcation" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/social-telegram.webp" alt="">
+          </a>
+          <a class="max" href="https://max.ru/" target="_blank" rel="noopener noreferrer" aria-label="MAX">
+            <img src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/social-max.webp" alt="" aria-hidden="true">
+          </a>
+        </div>
+        <a href="#hero">Оферта</a>
+        <a href="#hero">Политика конфиденциальности</a>
+        <small>© Все права защищены</small>
+      </div>
+    </div>
+    <div class="footer-plane-wrap" aria-hidden="true">
+      <img class="footer-plane" src="https://raw.githubusercontent.com/sudo-ascend/avito_order_008/master/assets/footer-plane.webp" alt="">
+    </div>
+  </div>
+
+  <dialog>
+    <button class="dialog-close">×</button>
+    <h2>Оставить заявку</h2>
+    <p>Оставьте свои контакты, чтобы записаться на консультацию.</p>
+    <form>
+      <input placeholder="Ваше имя" required>
+      <input type="tel" placeholder="Телефон" required>
+      <button class="pink-btn">Отправить</button>
+    </form>
+  </dialog>
+
+<script>
+const PRICING_TITLES = {
+  "ОГЭ": "Цена занятий по программе ОГЭ (8-9 класс)",
+  "ЕГЭ": "Цена занятий по программе ЕГЭ (10-11 класс)",
+};
+
+const PRICING_PAYMENT_LINKS = {
+  "ОГЭ": {
+    // Public checkout URL used by the supplied widget script (id=1632454).
+    lessons24: "https://cationschool.online/pl/lite/widget/widget?id=1632454",
+    // The supplied embed code for this widget points to payment widget 1632451.
+    lessons8: "https://cationschool.online/pl/lite/widget/widget?id=1632451",
+    // Until a dedicated checkout widget is supplied, route the 4-lesson request to contacts.
+    lessons4: "#contact",
+  },
+  "ЕГЭ": {
+    lessons24: "https://cationschool.online/pl/lite/widget/widget?id=1632450",
+    lessons8: "https://cationschool.online/pl/lite/widget/widget?id=1632447",
+    lessons4: "#contact",
+  },
+};
+
+const PRICING_CARD_TEMPLATES = {
+  "ОГЭ": `
+  <article class="pricing-card">
+    <ul>
+      <li>Уроки 2 раза в неделю по 1,5 часа</li>
+      <li>Домашние задания с проверкой и разбором ошибок</li>
+      <li>Авторские рабочие тетради</li>
+      <li>Средняя цена занятия 490 ₽</li>
+      <li>Пробник каждый месяц</li>
+      <li>Учебный чат с оперативными ответами на вопросы</li>
+      <li>Личный учебный чат с Алексом</li>
+      <li>Чаты с мотивацией и поддержкой</li>
+    </ul>
+    <span class="price-bubble">Средняя цена<br>занятия<br>490 ₽</span>
+    <div class="prices">
+      <p><strong>17 000₽</strong> / 24 урока</p>
+      <p><strong>5 900₽</strong> / 8 уроков</p>
+      <p><strong>2 950₽</strong> / 4 урока</p>
+    </div>
+    <div class="pricing-actions">
+      <a class="pink-btn pricing-pay-link" data-payment-plan="lessons24" rel="noopener noreferrer">Оплатить 24 урока →</a>
+      <a class="pink-btn outline-pay pricing-pay-link" data-payment-plan="lessons8" rel="noopener noreferrer">Оплатить 8 уроков →</a>
+      <a class="pink-btn outline-pay pricing-pay-link" data-payment-plan="lessons4" rel="noopener noreferrer">Оплатить 4 урока →</a>
+    </div>
+  </article>
+`,
+  "ЕГЭ": `
+  <article class="pricing-card">
+    <ul>
+      <li>2 урока по 2 часа в неделю</li>
+      <li>Домашние задания с проверкой и разбором ошибок</li>
+      <li>Авторские рабочие тетради</li>
+      <li>Пробник каждый месяц</li>
+      <li>Учебный чат с оперативными ответами на вопросы</li>
+      <li>Личный учебный чат с Алексом</li>
+      <li>Чаты с мотивацией и поддержкой</li>
+    </ul>
+    <span class="price-bubble">Средняя цена<br>занятия<br>400 ₽</span>
+    <div class="prices">
+      <p><strong>22 900₽</strong> / 24 урока</p>
+      <p><strong>7 900₽</strong> / 8 уроков</p>
+      <p><strong>3 950₽</strong> / 4 урока</p>
+    </div>
+    <div class="pricing-actions">
+      <a class="pink-btn pricing-pay-link" data-payment-plan="lessons24" rel="noopener noreferrer">Оплатить 24 урока →</a>
+      <a class="pink-btn outline-pay pricing-pay-link" data-payment-plan="lessons8" rel="noopener noreferrer">Оплатить 8 уроков →</a>
+      <a class="pink-btn outline-pay pricing-pay-link" data-payment-plan="lessons4" rel="noopener noreferrer">Оплатить 4 урока →</a>
+    </div>
+  </article>
+`,
+};
+
+let chemistryTickerExam = "ЕГЭ";
+
+function renderTicker(ticker, text, label) {
+  const itemText = `◦ ${text}`;
+  const measure = document.createElement("span");
+  measure.className = "ticker-item";
+  measure.textContent = itemText;
+  measure.style.cssText = "position:absolute;visibility:hidden;white-space:nowrap";
+  ticker.append(measure);
+  const itemWidth = measure.getBoundingClientRect().width;
+  measure.remove();
+
+  // One group is always wider than the viewport, so its duplicate meets it without a gap.
+  const repetitions = Math.max(2, Math.ceil((ticker.clientWidth + itemWidth) / itemWidth));
+  if (ticker.dataset.tickerText === text && Number(ticker.dataset.tickerRepetitions) >= repetitions) return;
+
+  const items = `<span class="ticker-item">${itemText}</span>`.repeat(repetitions);
+  const group = `<div class="ticker-group" aria-hidden="true">${items}</div>`;
+  ticker.innerHTML = `<div class="ticker-track" aria-label="${label}">${group}${group}</div>`;
+  ticker.dataset.tickerText = text;
+  ticker.dataset.tickerRepetitions = String(repetitions);
+}
+
+function normalizeTickers(selectedExam = "ЕГЭ") {
+  chemistryTickerExam = selectedExam;
+  const examText = selectedExam === "ОГЭ" ? "ОГЭ ПО ХИМИИ 2027" : "ЕГЭ ПО ХИМИИ 2027";
+  const text = `${examText} ◦ АЛЕКС МЕНДЕЛЕЕВ`;
+
+  document.querySelectorAll(".ticker").forEach((ticker) => {
+    renderTicker(ticker, text, `Подготовка к ${selectedExam} по химии`);
+  });
+}
+
+let chemistryTickerResizeFrame;
+window.addEventListener("resize", () => {
+  window.cancelAnimationFrame(chemistryTickerResizeFrame);
+  chemistryTickerResizeFrame = window.requestAnimationFrame(() => normalizeTickers(chemistryTickerExam));
+});
+
+document.fonts?.ready.then(() => normalizeTickers(chemistryTickerExam));
+
+function restoreFaqItems() {
+  const faqGrid = document.querySelector(".faq-grid");
+  if (!faqGrid) {
+    return;
+  }
+
+  faqGrid.innerHTML = `
+    <details><summary>Я ничего не знаю по химии, подойдёт ли курс для занятий с 0?</summary><p>Да, курс начинается с базы и подойдёт для подготовки с нуля.</p></details>
+    <details><summary>Не знаю, смогу ли присутствовать на всех занятиях онлайн. Что делать?</summary><p>Все занятия сохраняются в записи.</p></details>
+    <details><summary>Обязательно ли делать домашние задания?</summary><p>Да, домашние задания помогают закреплять материал.</p></details>
+    <details><summary>Где проходит курс?</summary><p>Курс проходит в онлайн-формате.</p></details>
+    <details><summary>Оплатил курс и не могу зайти. Как быть?</summary><p>Напишите в поддержку - мы поможем войти в личный кабинет.</p></details>
+    <details><summary>Александр Менделеев самый крутой препод в мире?</summary><p>Ученики говорят, что да :)</p></details>
+  `;
+}
+
+function setupSideNav() {
+  const navLinks = [...document.querySelectorAll(".side-nav a")];
+  if (!navLinks.length) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        navLinks.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${entry.target.id}`
+          );
+        });
+      });
+    },
+    { rootMargin: "-40% 0px -52% 0px" }
+  );
+
+  document
+    .querySelectorAll("main section[id]")
+    .forEach((section) => observer.observe(section));
+}
+
+function setupDialog() {
+  const dialog = document.querySelector("dialog");
+  const trigger = document.querySelector(".consultation-trigger");
+  const closeButton = document.querySelector(".dialog-close");
+  const form = dialog?.querySelector("form");
+
+  if (!dialog || !closeButton || !form) {
+    return null;
+  }
+
+  const openDialog = () => dialog.showModal();
+
+  if (trigger) {
+    trigger.addEventListener("click", openDialog);
+  }
+
+  closeButton.addEventListener("click", () => dialog.close());
+
+  dialog.addEventListener("click", (event) => {
+    const rect = dialog.getBoundingClientRect();
+    const insideDialog =
+      rect.top <= event.clientY &&
+      event.clientY <= rect.top + rect.height &&
+      rect.left <= event.clientX &&
+      event.clientX <= rect.left + rect.width;
+
+    if (!insideDialog) {
+      dialog.close();
+    }
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    form.innerHTML = "<strong>Спасибо! Заявка отправлена.</strong>";
+  });
+
+  return openDialog;
+}
+
+function setupMobileMenu() {
+  const burger = document.querySelector(".hamburger");
+  const menu = document.querySelector("#mobile-menu");
+  const backdrop = document.querySelector(".mobile-menu-backdrop");
+
+  if (!burger || !menu || !backdrop) {
+    return;
+  }
+
+  let hideTimer = null;
+
+  const setExpanded = (expanded) => {
+    burger.setAttribute("aria-expanded", String(expanded));
+    burger.classList.toggle("is-active", expanded);
+    document.body.classList.toggle("menu-open", expanded);
+  };
+
+  const openMenu = () => {
+    clearTimeout(hideTimer);
+    backdrop.hidden = false;
+    menu.hidden = false;
+
+    requestAnimationFrame(() => {
+      backdrop.classList.add("is-open");
+      menu.classList.add("is-open");
+      setExpanded(true);
+    });
+  };
+
+  const closeMenu = () => {
+    backdrop.classList.remove("is-open");
+    menu.classList.remove("is-open");
+    setExpanded(false);
+
+    hideTimer = window.setTimeout(() => {
+      backdrop.hidden = true;
+      menu.hidden = true;
+    }, 240);
+  };
+
+  burger.addEventListener("click", () => {
+    const isOpen = burger.getAttribute("aria-expanded") === "true";
+    if (isOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  backdrop.addEventListener("click", closeMenu);
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && burger.getAttribute("aria-expanded") === "true") {
+      closeMenu();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 800 && burger.getAttribute("aria-expanded") === "true") {
+      closeMenu();
+    }
+  });
+}
+
+function renderPricing(selectedExam) {
+  const pricing = document.querySelector("#exams");
+  if (!pricing) {
+    return;
+  }
+
+  const title = PRICING_TITLES[selectedExam] || PRICING_TITLES["ЕГЭ"];
+  const paymentLinks =
+    PRICING_PAYMENT_LINKS[selectedExam] || PRICING_PAYMENT_LINKS["ЕГЭ"];
+
+  const cardTemplate =
+    PRICING_CARD_TEMPLATES[selectedExam] || PRICING_CARD_TEMPLATES["ЕГЭ"];
+
+  pricing.innerHTML = `<h2>${title}</h2>${cardTemplate}`;
+  pricing.hidden = false;
+  pricing.setAttribute("aria-hidden", "false");
+
+  pricing.querySelectorAll("[data-payment-plan]").forEach((link) => {
+    const plan = link.dataset.paymentPlan;
+    const paymentLink = paymentLinks[plan];
+
+    if (paymentLink) {
+      link.hidden = false;
+      link.href = paymentLink;
+      if (paymentLink.startsWith("#")) {
+        link.removeAttribute("target");
+      } else {
+        link.target = "_blank";
+      }
+      link.removeAttribute("aria-disabled");
+    } else {
+      link.hidden = true;
+      link.removeAttribute("href");
+      link.removeAttribute("target");
+      link.setAttribute("aria-disabled", "true");
+    }
+
+    // A missing payment URL must never fall back to a `#` navigation.
+    link.addEventListener("click", (event) => {
+      if (!paymentLink) {
+        event.preventDefault();
+      }
+    });
+  });
+}
+
+function setupPricing() {
+  const pricing = document.querySelector("#exams");
+
+  if (!pricing) {
+    return;
+  }
+
+  renderPricing("ЕГЭ");
+}
+
+function setExamContent(selectedExam) {
+  document.querySelectorAll("[data-exam-content]").forEach((element) => {
+    element.hidden = element.dataset.examContent !== selectedExam;
+  });
+
+  normalizeTickers(selectedExam);
+}
+
+function setupModeSelectors() {
+  const selectors = [...document.querySelectorAll(".hero-select")];
+  const modeControl = document.querySelector("[data-mode-control]");
+  const modeTrigger = modeControl?.querySelector(".exam-mode-trigger");
+  const modeMenu = modeControl?.querySelector(".exam-mode-menu");
+  const modeExam = modeControl?.querySelector("[data-mode-exam]");
+  const modeSubject = modeControl?.querySelector("[data-mode-subject]");
+  let activeExam = new URLSearchParams(window.location.search).get("exam") === "oge" ? "ОГЭ" : "ЕГЭ";
+  let subjectNavigationTimer = 0;
+
+  if (!selectors.length) {
+    return;
+  }
+
+  const updateChemistryMode = (exam, { animate = false } = {}) => {
+    const apply = () => {
+      activeExam = exam;
+      const examKey = exam === "ОГЭ" ? "oge" : "ege";
+      document.querySelectorAll('.hero-select[data-select="exam"] [data-choice]').forEach((choice) => {
+        choice.textContent = exam;
+      });
+      document.querySelectorAll("[data-hero-exam]").forEach((heading) => { heading.textContent = exam; });
+      if (modeExam) modeExam.textContent = exam;
+      if (modeSubject) modeSubject.textContent = "Химия";
+      modeMenu?.querySelectorAll("[data-mode]").forEach((option) => {
+        option.setAttribute("aria-selected", String(option.dataset.mode === `${examKey}-chemistry`));
+      });
+      setExamContent(exam);
+      renderPricing(exam);
+      const url = new URL(window.location.href);
+      url.search = `?subject=chemistry&exam=${examKey}`;
+      window.history.replaceState(null, "", url);
+    };
+
+    if (animate && window.runModeTransition) window.runModeTransition(apply);
+    else apply();
+  };
+
+  updateChemistryMode(activeExam);
+
+  const closeHeaderMode = () => {
+    modeControl?.classList.remove("is-open");
+    modeTrigger?.setAttribute("aria-expanded", "false");
+    if (modeMenu) modeMenu.hidden = true;
+  };
+
+  const closeAll = () => {
+    closeHeaderMode();
+    selectors.forEach((selector) => {
+      selector.classList.remove("is-open");
+      selector.querySelector(".hero-select__trigger")?.setAttribute("aria-expanded", "false");
+    });
+  };
+
+  const navigateToSubject = (url) => {
+    window.clearTimeout(subjectNavigationTimer);
+    subjectNavigationTimer = window.setTimeout(() => {
+      if (window.navigateWithTransition) window.navigateWithTransition(url);
+      else window.location.href = url;
+    }, 140);
+  };
+
+  selectors.forEach((selector) => {
+    const type = selector.dataset.select;
+    if (type === "exam") selector.dataset.active = activeExam;
+    const trigger = selector.querySelector(".hero-select__trigger");
+    const options = [...selector.querySelectorAll("[data-value]")];
+    let switchTimer = 0;
+    const applyChoice = (selected, { animate = false } = {}) => {
+      const changed = selector.dataset.active !== selected;
+      if (animate && changed) {
+        window.clearTimeout(switchTimer);
+        selector.classList.add("is-switching");
+        switchTimer = window.setTimeout(() => selector.classList.remove("is-switching"), 260);
+      }
+      selector.dataset.active = selected;
+      options.forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.value === selected)));
+      selector.classList.toggle("is-right", selected === (type === "exam" ? "ЕГЭ" : "РУССКИЙ"));
+      document.querySelectorAll("[data-hero-exam]").forEach((heading) => {
+        heading.textContent = activeExam;
+      });
+    };
+
+    trigger?.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const selected = selector.dataset.active;
+      const next = type === "exam" ? (selected === "ЕГЭ" ? "ОГЭ" : "ЕГЭ") : (selected === "ХИМИЯ" ? "РУССКИЙ" : "ХИМИЯ");
+      const option = options.find((button) => button.dataset.value === next);
+      option?.click();
+    });
+
+    options.forEach((button) => {
+      button.addEventListener("click", () => {
+        const selected = button.dataset.value;
+        if (type === "subject") window.clearTimeout(subjectNavigationTimer);
+        applyChoice(selected, { animate: true });
+
+        if (type === "exam") {
+          updateChemistryMode(selected, { animate: true });
+        } else {
+          if (selected === "РУССКИЙ") {
+            const examKey = activeExam === "ОГЭ" ? "oge" : "ege";
+            navigateToSubject(`index.html?subject=chemistry&exam=${examKey}`);
+            closeAll();
+            return;
+          }
+        }
+
+        closeAll();
+      });
+    });
+    applyChoice(selector.dataset.active);
+  });
+
+  document.addEventListener("click", closeAll);
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeAll();
+    }
+  });
+
+  const selectHeaderMode = (value) => {
+    const [examKey, subject] = value.split("-");
+    const exam = examKey === "oge" ? "ОГЭ" : "ЕГЭ";
+    if (subject === "chemistry") {
+      updateChemistryMode(exam, { animate: true });
+      closeHeaderMode();
+      return;
+    }
+
+    const url = `index.html?subject=chemistry&exam=${examKey}`;
+    if (window.navigateWithTransition) window.navigateWithTransition(url);
+    else window.location.href = url;
+  };
+
+  modeTrigger?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const opens = !modeControl.classList.contains("is-open");
+    closeAll();
+    modeControl.classList.toggle("is-open", opens);
+    modeTrigger.setAttribute("aria-expanded", String(opens));
+    if (modeMenu) modeMenu.hidden = !opens;
+  });
+
+  modeMenu?.querySelectorAll("[data-mode]").forEach((option) => {
+    option.addEventListener("click", () => selectHeaderMode(option.dataset.mode));
+  });
+}
+
+function setupSiteLoader() {
+  if (window.__appRouterLoading) return;
+  const loader = document.querySelector(".site-loader");
+  if (!loader) {
+    return;
+  }
+
+  if (document.documentElement.classList.contains("page-transition-incoming")) {
+    loader.remove();
+    document.body.classList.add("site-ready");
+    window.dispatchEvent(new Event("site-ready"));
+    return;
+  }
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const revealSite = () => {
+    const revealDelay = document.documentElement.classList.contains("page-transition-incoming")
+      ? 0
+      : reduceMotion
+        ? 0
+        : 750;
+    window.setTimeout(() => {
+      let isRevealed = false;
+      const finishReveal = () => {
+        if (isRevealed) {
+          return;
+        }
+
+        isRevealed = true;
+        loader.remove();
+        window.dispatchEvent(new Event("site-ready"));
+      };
+
+      document.body.classList.add("site-ready");
+      loader.addEventListener("transitionend", finishReveal, { once: true });
+      window.setTimeout(finishReveal, 700);
+    }, revealDelay);
+  };
+
+  if (document.readyState === "complete") {
+    revealSite();
+  } else {
+    window.addEventListener("load", revealSite, { once: true });
+  }
+}
+
+function setupWelcomeHint() {
+  const overlay = document.querySelector(".exam-guide-overlay");
+  const hint = document.querySelector(".exam-guide-tooltip");
+
+  if (!overlay || !hint) {
+    return;
+  }
+
+  let hasShown = false;
+  let hideTimer = 0;
+  let cleanupTimer = 0;
+  const hideHint = () => {
+    window.clearTimeout(hideTimer);
+    window.clearTimeout(cleanupTimer);
+    document.body.classList.remove("exam-guide-active");
+    document.body.classList.add("exam-guide-closing");
+    cleanupTimer = window.setTimeout(() => {
+      overlay.hidden = true;
+      hint.hidden = true;
+      document.body.classList.remove("exam-guide-closing");
+    }, 1000);
+  };
+
+  const showHint = () => {
+    if (hasShown) {
+      return;
+    }
+
+    hasShown = true;
+    document.body.classList.remove("exam-guide-closing");
+    overlay.hidden = false;
+    hint.hidden = false;
+
+    requestAnimationFrame(() => {
+      document.body.classList.add("exam-guide-active");
+    });
+
+    hideTimer = window.setTimeout(hideHint, 2000);
+  };
+
+  document.addEventListener("click", (event) => {
+    if (
+      document.body.classList.contains("exam-guide-active") &&
+      !event.target.closest(".hero-heading-guide")
+    ) {
+      hideHint();
+    }
+  }, true);
+  window.addEventListener("site-ready", showHint, { once: true });
+  if (document.body.classList.contains("site-ready")) {
+    showHint();
+  }
+}
+
+normalizeTickers();
+restoreFaqItems();
+setupSideNav();
+setupDialog();
+setupMobileMenu();
+setupPricing();
+setupModeSelectors();
+setupWelcomeHint();
+setupSiteLoader();
+</script>
+</body>
+</html>

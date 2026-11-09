@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <style>html[hidden]{display:block!important}</style>
+  <script>
+    try {
+      if (window.sessionStorage.getItem("subject-transition") === "1") {
+        document.documentElement.classList.add("skip-site-loader");
+      }
+    } catch {}
+  </script>
+  <script>
+    try {
+      document.documentElement.dataset.russianExam = new URLSearchParams(window.location.search).get("exam") === "oge" ? "oge" : "ege";
+    } catch {
+      document.documentElement.dataset.russianExam = "ege";
+    }
+    document.documentElement.hidden = false;
+    document.documentElement.removeAttribute("hidden");
+  </script>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/site-favicon.webp">
+  <title>MendeleevSchool | Подготовка к ЕГЭ и ОГЭ</title>
+  <meta name="description" content="Подготовка к ЕГЭ по русскому языку с Викторией Игоревной: понятная система, практика и поддержка до результата.">
+  <link rel="stylesheet" href="styles.css?v=site-17">
+  <link rel="stylesheet" href="russian.css?v=9">
+  <link rel="stylesheet" href="russian-overrides.css?v=8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="russian-page">
+  <div class="site-loader" aria-hidden="true">
+    <div class="site-loader__halo"></div>
+    <img class="site-loader__logo russian-logo--ege" src="assets/russian-logo-ege.webp" alt="">
+    <img class="site-loader__logo russian-logo--oge" src="assets/russian-logo-oge.webp" alt="">
+  </div>
+  <div class="exam-guide-overlay" aria-hidden="true" hidden></div>
+  <header class="header">
+    <div class="shell header-inner">
+      <a class="logo" href="russian.html" aria-label="Подготовка к русскому языку">
+        <img class="russian-logo--ege" src="assets/russian-logo-ege.webp" alt="">
+        <img class="russian-logo--oge" src="assets/russian-logo-oge.webp" alt="">
+      </a>
+      <a class="contacts" href="tel:+79804905872"><b>+7 980 490 58 72</b><small>victoria@russian-class.ru</small></a>
+      <a class="outline-link" href="#process">Как проходят уроки? →</a>
+      <div class="header-line"></div>
+      <div class="exam-display" data-mode-control>
+        <button class="exam-mode-trigger" type="button" aria-label="Выберите предмет и экзамен" aria-expanded="false" aria-controls="russian-mode-options">
+          <span data-mode-exam>ЕГЭ</span><span data-mode-subject>Русский</span><i class="exam-mode-chevron" aria-hidden="true"></i>
+        </button>
+        <div id="russian-mode-options" class="exam-mode-menu" role="listbox" hidden>
+          <button type="button" role="option" data-mode="ege-russian">ЕГЭ · Русский</button>
+          <button type="button" role="option" data-mode="oge-russian">ОГЭ · Русский</button>
+          <button type="button" role="option" data-mode="ege-chemistry">ЕГЭ · Химия</button>
+          <button type="button" role="option" data-mode="oge-chemistry">ОГЭ · Химия</button>
+        </div>
+      </div>
+      <div class="social-links">
+        <a class="telegram" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+          <img src="assets/social-telegram.webp" alt="">
+        </a>
+        <a class="max" href="index.html?subject=chemistry" aria-label="Вернуться к химии">
+          <img src="assets/social-max.webp" alt="" aria-hidden="true">
+        </a>
+      </div>
+      <button class="hamburger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu-backdrop" hidden></div>
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Мобильное меню" hidden>
+    <a href="#hero">Главная</a>
+    <a href="#format">Формат</a>
+    <a href="#about">Преподаватель</a>
+    <a href="#process">Цикл</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#exams">Цены</a>
+    <a href="#faq">FAQ</a>
+    <a href="#footer">Контакты</a>
+    <div class="mobile-menu-socials">
+      <a class="telegram" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+        <img src="assets/social-telegram.webp" alt="">
+      </a>
+      <a class="max" href="index.html?subject=chemistry" aria-label="Вернуться к химии">
+        <img src="assets/social-max.webp" alt="" aria-hidden="true">
+      </a>
+    </div>
+  </nav>
+
+  <nav class="side-nav" aria-label="Разделы"><a class="active" href="#hero"></a><a href="#about"></a><a href="#process"></a><a href="#reviews"></a><a href="#exams"></a><a href="#faq"></a></nav>
+
+  <main>
+    <section id="hero" class="hero shell rings-left">
+      <div class="hero-copy">
+        <div class="hero-heading-guide">
+          <div class="hero-choice-panel" aria-label="Выбор экзамена и предмета">
+            <div class="choice-switch hero-select" data-select="exam" data-active="ЕГЭ" role="group" aria-label="Экзамен">
+              <span class="choice-switch__caption">Экзамен</span>
+              <div class="choice-switch__controls">
+                <button class="choice-switch__option" type="button" data-value="ОГЭ" aria-pressed="false">ОГЭ</button>
+                <button class="hero-select__trigger choice-switch__track" type="button" data-toggle aria-label="Сменить экзамен">
+                  <span class="choice-switch__thumb" aria-hidden="true"></span>
+                </button>
+                <button class="choice-switch__option" type="button" data-value="ЕГЭ" aria-pressed="true">ЕГЭ</button>
+              </div>
+            </div>
+            <div class="choice-switch hero-select" data-select="subject" data-active="РУССКИЙ" role="group" aria-label="Предмет">
+              <span class="choice-switch__caption">Предмет</span>
+              <div class="choice-switch__controls">
+                <button class="choice-switch__option" type="button" data-value="ХИМИЯ" aria-pressed="false">Химия</button>
+                <button class="hero-select__trigger choice-switch__track" type="button" data-toggle aria-label="Сменить предмет">
+                  <span class="choice-switch__thumb" aria-hidden="true"></span>
+                </button>
+                <button class="choice-switch__option" type="button" data-value="РУССКИЙ" aria-pressed="true">Русский</button>
+              </div>
+            </div>
+          </div>
+        <div class="exam-guide-tooltip" role="status" hidden>
+          Выберите экзамен<br>и предмет
+        </div>
+        </div>
+        <h1>Подготовка к <span data-hero-exam>ЕГЭ</span><br>по русскому 2027</h1>
+        <p data-russian-hero-description>С нуля выстроим сильную<br>базу по русскому языку</p>
+        <a class="pink-btn" href="#exams">Смотреть цены</a>
+        <a class="hero-video" href="#process"><img src="assets/russian-hero-feather.webp" alt=""><span>Русский просто,<br>если учить правильно</span></a>
+      </div>
+      <div class="hero-person"><div class="pink-disc"><div class="hero-portrait"><img data-russian-hero-photo src="assets/russian-teacher-victoria-hero.png" alt="Виктория Игоревна, преподаватель русского языка"></div></div><span class="metric m-two" data-russian-exam="ЕГЭ">личный результат<br>ЕГЭ <b>100</b></span><span class="metric m-two" data-russian-exam="ОГЭ" hidden>личный результат<br>ЕГЭ <b>100</b></span><span class="metric m-one" data-russian-exam="ЕГЭ">средний балл<br>учеников <b>80,4</b></span><span class="metric m-one" data-russian-exam="ОГЭ" hidden>средняя оценка<br>ОГЭ <b>4,82</b></span></div>
+      <article class="hero-note"><b data-russian-teacher-name>ВИКТОРИЯ ИГОРЕВНА</b><ul data-russian-hero-facts><li>Сдала ЕГЭ по русскому языку на 100 баллов</li><li>Окончила МГУ им. Ломоносова</li><li>Более 500 учеников</li></ul></article>
+    </section>
+
+    <section id="format" class="shell benefit-grid">
+      <article class="benefit magenta"><span class="benefit-icon">01</span><h2>УРОКИ<br>ОНЛАЙН</h2><ul><li>2 занятия каждую неделю</li><li>Запись уроков и конспект</li><li>Практика на реальных заданиях</li></ul></article>
+      <article class="benefit navy"><span class="benefit-icon">02</span><h2>ПРОВЕРКА<br>РАБОТ</h2><ul><li>Домашние задания после урока</li><li>Разбор каждой ошибки</li><li>Личная обратная связь</li></ul></article>
+      <article class="benefit navy"><span class="benefit-icon">03</span><h2>ЛИЧНЫЙ<br>ПОДХОД</h2><ul><li>Уроки веду лично я</li><li>План под вашу цель и балл</li><li>Поддержка между занятиями</li></ul></article>
+    </section>
+
+    <section id="about" class="about shell"><div class="about-photo"><div><img data-russian-about-photo src="assets/russian-teacher-victoria-about.webp" alt="Виктория Игоревна"></div></div><div class="about-copy"><h2 data-russian-about-title>Кто такая<br>Виктория Игоревна</h2><ul data-russian-about-facts><li>Окончила МГУ им. Ломоносова по профилю «Журналистика»</li><li>Сдала ЕГЭ по русскому языку на 100 баллов</li><li>Преподавательский стаж более 12 лет</li><li>Более 500 учеников уже прошли подготовку со мной</li><li>Средний балл ЕГЭ — 80,4</li></ul></div></section>
+    <div class="ticker" aria-label="Подготовка к ЕГЭ по русскому языку">◦ ЕГЭ ПО РУССКОМУ 2027 ◦ ВИКТОРИЯ ИГОРЕВНА ◦ ЕГЭ ПО РУССКОМУ 2027 ◦ ВИКТОРИЯ ИГОРЕВНА</div>
+
+    <section id="process" class="process shell">
+      <h2>Цикл работы на уроке</h2>
+      <p class="caption" data-russian-process-caption>Наш процесс обучения русскому языку прост, прозрачен и эффективен</p>
+      <div class="steps">
+        <article><div><i><img src="assets/process-workbook.webp" alt=""></i><b>01</b></div><h3>Выдача конспекта</h3><p>Авторский материал<br>для системного запоминания</p></article>
+        <article><div><i><img src="assets/process-video.webp" alt=""></i><b>02</b></div><h3>Видео-занятие</h3><p>Короткий онлайн-урок<br>с понятным объяснением темы</p></article>
+        <article><div><i><img src="assets/process-homework.webp" alt=""></i><b>03</b></div><h3>Домашнее задание</h3><p>Практика для закрепления<br>материала сразу после урока</p></article>
+        <article><div><i><img src="assets/process-feather.svg" alt="Перо"></i><b>04</b></div><h3>Разбор домашнего задания</h3><p>Подробный разбор ошибок<br>и повторение материала</p></article>
+      </div>
+    </section>
+
+    <section id="reviews" class="reviews shell rings-right"><h2>Отзывы моих учеников</h2><p class="caption">Результаты и впечатления тех, кто готовился со мной</p><div class="review-title" data-russian-review-title="ЕГЭ">ЕГЭ</div><div class="review-grid" data-russian-review-grid="ЕГЭ"><article><header><img src="assets/russian-review-arseniy.webp" alt="Арсений"><b>Арсений</b></header><p>Пришёл к Виктории Игоревне с очень низким уровнем знаний: в школе русским языком практически не занимался. Подготовка к ЕГЭ очень понравилась: понятные презентации по каждому разделу давали полное понимание тем.</p><p>Сдал на 83 балла. Спасибо, Виктория Игоревна, вы лучшая!</p></article><article><header><img src="assets/russian-review-aleksey.webp" alt="Алексей"><b>Алексей</b></header><p>Замечательный преподаватель, искренне рекомендую!</p><p>Виктория Игоревна смогла очень чётко объяснить логику и алгоритм выполнения каждого задания, научила думать и понимать их смысл. На экзамене получил 100 баллов. Ещё раз огромное спасибо Виктории Игоревне!</p></article><article><header><img src="assets/russian-review-alisa.webp" alt="Алиса"><b>Алиса</b></header><p>Большое спасибо Виктории Игоревне за отличную подготовку к ЕГЭ по русскому языку! Занятия были очень комфортными, а учебная программа - насыщенной. За год мы успели пройти и закрепить все темы, а также отработать сочинение. Сдала на 86 баллов и очень довольна результатом.</p><p>Рекомендую Викторию Игоревну как профессионала своего дела!</p></article></div><div class="review-title" data-russian-review-title="ОГЭ" hidden>ОГЭ</div><div class="review-grid" data-russian-review-grid="ОГЭ" hidden><article><header><img src="assets/russian-review-vera.webp" alt="Вера"><b>Вера</b></header><p>Хочется сказать огромное спасибо таким людям, как Алиса.</p><p>Она не просто дает знания, она вкладывает душу в каждый урок. Я помню, как в начале нашего пути ждала каждый урок, чтобы открыть какую-нибудь дверь с заданиями или передвинуть грибы в нужную корзину.</p><p>Алиса, спасибо Вам, я сдала ОГЭ на уверенную 5.</p></article><article><header><img src="assets/russian-review-bahrom.webp" alt="Бахром"><b>Бахром</b></header><p>Хочу поблагодарить своего репетитора за подготовку к ОГЭ!</p><p>Мне очень понравились занятия, всё объяснялось понятно и доступно, всегда можно было задать вопросы и получить помощь. Благодаря нашим занятиям я сдал ОГЭ на 4, до пятёрки не хватило всего одного балла.</p><p>Спасибо большое за знания, поддержку и проделанную работу!</p></article><article><header><img src="assets/russian-review-nastya.webp" alt="Настя"><b>Настя</b></header><p>Алиса великолепный учитель, который реально заинтересован в обучении.</p><p>Большое спасибо за ваше терпение и труд! Очень благодарна и хочу заниматься с вами до конца 11 класса.</p><p>ОГЭ я сдала на 5, кстати, почти максимум!</p></article></div></section>
+    <div class="ticker" aria-label="Подготовка к ЕГЭ по русскому языку">◦ ЕГЭ ПО РУССКОМУ 2027 ◦ ВИКТОРИЯ ИГОРЕВНА ◦ ЕГЭ ПО РУССКОМУ 2027 ◦ ВИКТОРИЯ ИГОРЕВНА</div>
+
+    <section id="exams" class="pricing shell" aria-live="polite"></section>
+
+    <section id="faq" class="faq shell rings-left"><h2>Популярные вопросы</h2><p class="caption">Часто задаваемые вопросы, которые могут возникать</p><div class="faq-grid"><details><summary>Я ничего не знаю по русскому языку, подойдёт ли курс для занятий с 0?</summary><p>Да, курс начинается с базы и подойдёт для подготовки с нуля.</p></details><details><summary>Не знаю, смогу ли присутствовать на всех занятиях онлайн. Что делать?</summary><p>Все занятия сохраняются в записи.</p></details><details><summary>Обязательно ли делать домашние задания?</summary><p>Да, домашние задания помогают закреплять материал.</p></details><details><summary>Где проходит курс?</summary><p>Курс проходит в онлайн-формате.</p></details><details><summary>Оплатил курс и не могу зайти. Как быть?</summary><p>Напишите в поддержку - мы поможем войти в личный кабинет.</p></details><details><summary>Виктория Игоревна самый крутой препод в мире?</summary><p>Ученики говорят, что да :)</p></details></div></section>
+  </main>
+
+  <footer id="footer"><div class="shell footer-inner"><article class="consultation" id="contact"><div class="consultation-photo"><img data-russian-consultation-photo src="assets/russian-teacher-victoria-about.webp" alt="Виктория Игоревна"></div><h2>Бесплатная<br>консультация</h2><p>Обсудим цель, уровень<br>и удобный формат занятий.</p><button class="pink-btn consultation-trigger" type="button">Оставить заявку →</button></article><div class="footer-contacts"><h3>Контакты:</h3><a href="tel:+79804905872">+7 980 490 58 72</a><a href="mailto:victoria@russian-class.ru">victoria@russian-class.ru</a><h3 class="footer-menu-title">Меню:</h3><a href="#hero">Главная</a><a href="#about">Преподаватель</a><a href="#reviews">Отзывы</a><a href="#faq">FAQ</a></div><div class="footer-social"><h3>Напишите мне:</h3><div class="footer-socials"><a class="telegram" href="https://t.me/" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><img src="assets/social-telegram.webp" alt=""></a><a class="max" href="https://max.ru/" target="_blank" rel="noopener noreferrer" aria-label="MAX"><img src="assets/social-max.webp" alt="" aria-hidden="true"></a></div><a class="chemistry-link" href="index.html?subject=chemistry">Подготовка по химии →</a><a href="#hero">Оферта</a><a href="#hero">Политика конфиденциальности</a><small>© Все права защищены</small></div></div><div class="footer-plane-wrap" aria-hidden="true"><img class="footer-plane" src="assets/footer-plane.webp" alt=""></div></footer>
+
+  <dialog><button class="dialog-close" type="button">×</button><h2>Оставить заявку</h2><p>Оставьте контакты, и преподаватель свяжется с вами.</p><form><input placeholder="Ваше имя" required><input type="tel" placeholder="Телефон" required><button class="pink-btn">Отправить</button></form></dialog>
+  <script src="page-transition.js?v=6"></script>
+  <script src="russian.js?v=19"></script>
+</body>
+</html>

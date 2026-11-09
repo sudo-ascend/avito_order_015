@@ -1,0 +1,208 @@
+.russian-page .ticker {
+  color: #555;
+  border-color: #eee;
+}
+
+.russian-page .ticker span {
+  padding-right: 0;
+}
+
+
+.russian-page .pricing-card h3,
+.russian-page .pricing-actions .outline-pay {
+  color: #fff !important;
+}
+
+/* Match the Russian ЕГЭ primary pricing elements to the dark navy benefit cards. */
+.russian-page .price-bubble,
+.russian-page .pricing-actions a:not(.outline-pay) {
+  background: #151515;
+  color: #fff;
+}
+
+.russian-page .pricing-actions .outline-pay {
+  border-color: #151515;
+  transition: background-color .2s ease, color .2s ease;
+}
+
+.russian-page .pricing-actions .outline-pay:hover,
+.russian-page .pricing-actions .outline-pay:focus-visible {
+  background: #151515;
+  color: #fff;
+}
+
+/* Keep the Russian pricing card geometrically identical to the chemistry card. */
+.russian-page .pricing {
+  margin: 95px auto 100px;
+}
+
+.russian-page .pricing-card {
+  width: 680px;
+  margin: 72px auto 0;
+  padding: 44px 60px 38px;
+  border-radius: 28px;
+}
+
+.russian-page .pricing-card .prices {
+  grid-template-columns: none;
+  gap: 13px;
+  margin: 44px 0 34px;
+}
+
+.russian-page .pricing-card .prices p {
+  font-size: 25px;
+}
+
+.russian-page .pricing-card .prices strong {
+  font-size: 33px;
+}
+
+@media (max-width: 800px) {
+  .russian-page .pricing {
+    margin: 70px auto;
+  }
+
+  .russian-page .pricing-card {
+    width: 100%;
+    margin-top: 34px;
+    padding: 24px 18px 22px;
+    border-radius: 20px;
+  }
+
+  .russian-page .pricing-card .prices {
+    grid-template-columns: none;
+    gap: 13px;
+    margin: 30px 0 26px;
+  }
+
+  .russian-page .pricing-card .prices p {
+    font-size: 16px;
+  }
+
+  .russian-page .pricing-card .prices strong {
+    font-size: 20px;
+  }
+}
+/* Russian-language loader uses the red accent from its logo. */
+.russian-page .site-loader:before,
+.russian-page .site-loader:after{
+  border-color:#c71925;
+}
+
+.russian-page .site-loader:before{
+  box-shadow:0 0 0 50px #fff,0 0 0 51px #c71925,0 0 0 100px #fff,0 0 0 101px #c71925;
+}
+
+.russian-page .site-loader__halo{
+  background:radial-gradient(circle,rgba(199,25,37,.16) 0,rgba(199,25,37,.07) 42%,rgba(199,25,37,0) 72%);
+}
+
+.russian-page .exam-mode-menu{
+  border-color:#e2dce1;
+  box-shadow:0 12px 24px rgba(36,36,41,.14);
+}
+
+.russian-page .exam-mode-menu button:hover,
+.russian-page .exam-mode-menu button:focus-visible{
+  color:#d71920;
+  background:#fff1f1;
+}
+
+.russian-page .exam-mode-menu button[data-mode$="-chemistry"]:hover,
+.russian-page .exam-mode-menu button[data-mode$="-chemistry"]:focus-visible{
+  color:#9c247f;
+  background:#fff;
+  box-shadow:0 0 0 2px #fff,0 0 0 4px #9c247f;
+}
+
+.russian-page .exam-mode-menu button[data-mode$="-russian"]:hover,
+.russian-page .exam-mode-menu button[data-mode$="-russian"]:focus-visible{
+  color:#d71920;
+  background:#fff;
+  box-shadow:0 0 0 2px #fff,0 0 0 4px #d71920;
+}
+
+/* EGE and OGE use separate Russian-language marks in the header and loader. */
+.russian-page .logo .russian-logo--ege{display:none}
+.russian-page .logo .russian-logo--oge{display:block}
+.russian-page .site-loader .russian-logo--ege{display:none}
+.russian-page .site-loader .russian-logo--oge{display:block}
+html[data-russian-exam="ege"] .russian-page .logo .russian-logo--ege,
+html[data-russian-exam="ege"] .russian-page .site-loader .russian-logo--ege{display:block}
+html[data-russian-exam="ege"] .russian-page .logo .russian-logo--oge,
+html[data-russian-exam="ege"] .russian-page .site-loader .russian-logo--oge{display:none}
+
+/* Match the compact tablet scale from the shared stylesheet. */
+@media (min-width: 801px) and (max-width: 1099px) {
+
+  .russian-page .hero-person {
+    width: 340px;
+    height: 425px;
+  }
+
+  .russian-page .pink-disc {
+    width: 320px;
+    height: 320px;
+    right: 8px;
+  }
+
+  .russian-page .hero-portrait,
+  .russian-page .pink-disc .hero-portrait {
+    width: 270px;
+    height: 425px;
+  }
+
+  .russian-page .hero-note {
+    left: auto;
+    bottom: auto;
+  }
+
+  .russian-page .about-photo {
+    height: 340px;
+  }
+
+  .russian-page .about-photo img {
+    height: 360px;
+  }
+
+  .russian-page .pricing {
+    margin: 70px auto 78px;
+  }
+
+  .russian-page .pricing-card {
+    width: min(570px, calc(100% - 132px));
+    margin-top: 52px;
+    padding: 34px 40px 30px;
+    border-radius: 22px;
+  }
+
+  .russian-page .pricing-card .prices {
+    margin: 30px 0 26px;
+  }
+
+  .russian-page .pricing-card .prices p {
+    font-size: 19px;
+  }
+
+  .russian-page .pricing-card .prices strong {
+    font-size: 25px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1099px) {
+  .russian-page .hero-person {
+    width: 390px;
+    height: 490px;
+  }
+
+  .russian-page .pink-disc {
+    width: 370px;
+    height: 370px;
+  }
+
+  .russian-page .hero-portrait,
+  .russian-page .pink-disc .hero-portrait {
+    width: 310px;
+    height: 490px;
+  }
+}
